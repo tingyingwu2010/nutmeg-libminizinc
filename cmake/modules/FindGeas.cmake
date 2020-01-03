@@ -8,11 +8,13 @@
 find_path(
   GEAS_INCLUDE geas/c/geas.h
   PATH_SUFFIXES include
+  HINTS $ENV{NUTMEG_ROOT} $ENV{NUTMEG_ROOT}/geas ${CMAKE_SOURCE_DIR}/../geas
 )
 
 find_library(
   GEAS_LIBRARY NAMES geas libgeas
   PATH_SUFFIXES lib
+  HINTS $ENV{NUTMEG_LIBRARY_DIR} $ENV{NUTMEG_LIBRARY_DIR}/geas ${CMAKE_SOURCE_DIR}/../build/geas
 )
 
 include(FindPackageHandleStandardArgs)
